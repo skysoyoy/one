@@ -1,64 +1,48 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>카톡 공유</title>
-<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<title>KakaoTalk Embed</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
-    <input type="button" onClick="sendLinkCustom();" value="Custom"/>
-    <input type="button" onClick="sendLinkDefault();" value="Default"/>
-
+<p><strong>Click the image below</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
 <script type="text/javascript">
-    function sendLinkCustom() {
-        Kakao.init("[fccac615148fea9472a1555f98f6e8f7]");
-        Kakao.Link.sendCustom({
-            templateId: [templete id]
-        });
-    }
-</script>
-
-<script>
-try {
-  function sendLinkDefault() {
-    Kakao.init('[Javascript API key]')
+ Kakao.init('fccac615148fea9472a1555f98f6e8f7');
+  function sendLink() {
     Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
-        title: '딸기 치즈 케익',
-        description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
+        title: 'TITLE',
+        description: 'DESCRIPTION',
         imageUrl:
-          'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+          'IMGURL',
         link: {
-          mobileWebUrl: 'https://developers.kakao.com',
-          webUrl: 'https://developers.kakao.com',
+          mobileWebUrl: 'IMGCLICK MOBILE URL',
+          webUrl: 'IMGCLICK PC URL',
         },
       },
       social: {
-        likeCount: 286,
-        commentCount: 45,
-        sharedCount: 845,
+        likeCount: LIKE, //99999 is the maximum
+        commentCount: COMMENT, //99999 is the maximum
+        sharedCount: SHARED, //99999 is the maximum
       },
       buttons: [
         {
-          title: '웹으로 보기',
+          title: 'Button1 Text',
           link: {
-            mobileWebUrl: 'https://developers.kakao.com',
-            webUrl: 'https://developers.kakao.com',
-          },
-        },
-        {
-          title: '앱으로 보기',
-          link: {
-            mobileWebUrl: 'https://developers.kakao.com',
-            webUrl: 'https://developers.kakao.com',
+            mobileWebUrl: 'CLICK MOBILE URL',
+            webUrl: 'CLICK PC URL',
           },
         },
       ],
     })
   }
-; window.kakaoDemoCallback && window.kakaoDemoCallback() }
-catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 </script>
-   
-</body>
+<!-- www.blackcats4567.com -->
+<!-- When clicking on the image/button, the address should be placed in Kakao Developers' Application> Platform> Web to be displayed successfully when clicked. -->
+  </body>
 </html>
