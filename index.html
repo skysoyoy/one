@@ -1,10 +1,10 @@
 <html>
 <head>
-<title>KakaoTalk Embed</title>
+	<title>카카오톡 버튼있는 메시지 전송하기</title>
 <script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
-<p><strong>Click the image below</strong> By. Blackcats4567</p>
+	<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
 <a id="kakao-link-btn" href="javascript:sendLink()">
   <img
     src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
@@ -16,28 +16,26 @@
     Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
-        title: 'TITLE',
-        description: 'DESCRIPTION',
-        imageUrl: 'https://tse3.mm.bing.net/th?id=OIP.8OeO2cWHQPq0j-EXLqLM-wHaFj&pid=Api&P=0&h=180
-',
+        title: '이런 버튼있는 메시지',
+        description: '이런 메시지를 보내고 싶다고요? 아래 버튼을 눌러 방법을 알아보세요',
         imageUrl:
-          'IMGURL',
+          'https://blackcats4567.github.io/kakaobuttonmessage/2020-06-06_19.08.30.png',
         link: {
-          mobileWebUrl: 'IMGCLICK MOBILE URL',
-          webUrl: 'IMGCLICK PC URL',
+          mobileWebUrl: 'https://youtu.be/BpAe8d-CXKk',
+          webUrl: 'https://youtu.be/BpAe8d-CXKk',
         },
       },
       social: {
-        likeCount: LIKE, //99999 is the maximum
-        commentCount: COMMENT, //99999 is the maximum
-        sharedCount: SHARED, //99999 is the maximum
+        likeCount: 99999, //99999가 최대입니다
+        commentCount: 99999, //99999가 최대입니다
+        sharedCount: 99999, //99999가 최대입니다
       },
       buttons: [
         {
-          title: 'Button1 Text',
+          title: '지금 바로 알아보기',
           link: {
-            mobileWebUrl: 'CLICK MOBILE URL',
-            webUrl: 'CLICK PC URL',
+            mobileWebUrl: 'https://youtu.be/BpAe8d-CXKk',
+            webUrl: 'https://youtu.be/BpAe8d-CXKk',
           },
         },
       ],
@@ -45,6 +43,6 @@
   }
 </script>
 <!-- www.blackcats4567.com -->
-<!-- When clicking on the image/button, the address should be placed in Kakao Developers' Application> Platform> Web to be displayed successfully when clicked. -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
   </body>
 </html>
