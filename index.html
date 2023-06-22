@@ -1,48 +1,64 @@
 <html>
 <head>
-<title>카카오톡 버튼있는 메시지 전송하기</title>
-<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>카톡 공유</title>
+<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
-<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
-<a id="kakao-link-btn" href="javascript:sendLink()">
-  <img
-    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
-  />
-</a>
+    <input type="button" onClick="sendLinkCustom();" value="Custom"/>
+    <input type="button" onClick="sendLinkDefault();" value="Default"/>
+
 <script type="text/javascript">
- Kakao.init('fccac615148fea9472a1555f98f6e8f7');
-  function sendLink() {
+    function sendLinkCustom() {
+        Kakao.init("[	fccac615148fea9472a1555f98f6e8f7]");
+        Kakao.Link.sendCustom({
+            templateId: [templete id]
+        });
+    }
+</script>
+
+<script>
+try {
+  function sendLinkDefault() {
+    Kakao.init('[Javascript API key]')
     Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
-        title: '제테스트목',
-        description: '테스트설명',
+        title: '딸기 치즈 케익',
+        description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
         imageUrl:
-          'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA0MTRfMjU5%2FMDAxNjgxNDgzMjc3NTA0.GSfsgWdjFly-NFEuzlBZWC_BZcchLKKJ7Ql4H8r0lvYg.H2JuKZzwBQ9W6Ukd1bacyQBXGgy0O85vzSHvX8_38RAg.JPEG.gallerysky%2F5c1a000bb2c24c548311868b50ddeed4.jpg&type=a340',
+          'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
         link: {
-          mobileWebUrl: 'www.lokijang.com',
-          webUrl: 'www.lokijang.com',
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
         },
       },
       social: {
-        likeCount: 좋아요 수, //99999가 최대입니다
-        commentCount: 댓글 수, //99999가 최대입니다
-        sharedCount: 공유 수, //99999가 최대입니다
+        likeCount: 286,
+        commentCount: 45,
+        sharedCount: 845,
       },
       buttons: [
         {
-          title: '버튼1 글자',
+          title: '웹으로 보기',
           link: {
-            mobileWebUrl: 'www.lokijang.com',
-            webUrl: 'www.lokijang.com',
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+          },
+        },
+        {
+          title: '앱으로 보기',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
           },
         },
       ],
     })
   }
+; window.kakaoDemoCallback && window.kakaoDemoCallback() }
+catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 </script>
-<!-- www.blackcats4567.com -->
-<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
-  </body>
+   
+</body>
 </html>
